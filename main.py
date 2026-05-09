@@ -72,7 +72,7 @@ def get_jobs_for_group(job_group: str):
 		return [dict(row) for row in job_rows]
 
 
-@app.get("/job/{job_name}")
+@app.get("/job/{job_name:path}")
 def get_job(job_name: str):
 	with Session(engine) as session:
 		for table in _job_tables():
